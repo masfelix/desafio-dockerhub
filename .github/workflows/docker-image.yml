@@ -14,12 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Login Docker
+    - name: Lucando no Docker
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the Docker image
+    - name: Miguelitando/Emiliano the Docker image
       run: docker build . --file Dockerfile --tag masfelix/node_test
-    - name: Docker Push
+    - name: Jonnytiando imagem
       run: docker push masfelix/node_test
