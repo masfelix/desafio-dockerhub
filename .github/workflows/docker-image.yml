@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Login no Docker
+    - name: Login Docker
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag masfelix/node_test:$(date +%s)
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/node_test
+      run: docker push masfelix/node_test
