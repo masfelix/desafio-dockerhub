@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Lucando no Docker v1.${{env.github.run_number}}
+    - name: Lucando no Docker v1.${{github.actor}}
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
